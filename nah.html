@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Registrasi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="navbar-brand" href="index.html"><img class="img-logo" src="images/logos/logo.png" alt="">Informatika</a>
+
+                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <ul class="nav navbar-nav navbar-right hidden-xs">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="Register.php">Registration</a></li>
+                            <li><a href="dosen.html">Dosen</a></li>
+                            <li><a href="tentang.html">Tentang</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 visible-xs">
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="Register.php">Registration</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="dosen.html">Dosen</a></li>
+                            <li><a href="tentang.html">Tentang</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container" style="background:#E9E9E9; margin-top:-20px;">
+        <div style="font-family:monospace;padding:25px 0px;"><h2 style="text-decoration:none; color:grey#" align="center">Registration Form</h2></div>
+       <div class="row">
+            <div class="col-md-7">
+             <form name="register" method="post" action="input.php">
+                <tr>
+                    <td width="15%"><h4>NIM</h4></td>
+                    <td><input class="form-control" name="txt_nim" type="text" id="txt_nim" maxlength="11" value="" placeHolder="NIM" /></td>
+                </tr>
+                <tr>
+                    <td width="15%"><h4>Nama</h4></td>
+                    <td><input class="form-control" name="txt_nama" type="text" id="txt_nama" maxlength="32" placeHolder="Nama" /></td>
+                </tr>
+                <tr>
+                    <td width="15%"><h4>Email</h4></td>
+                    <td><input class="form-control" name="txt_email" type="text" id="txt_email" maxlength="32" placeHolder="E-mail" /></td>
+                </tr>
+                <tr>
+                    <td width="15%"><h4>Password</h4></td>
+                    <td><input class="form-control" name="txt_pass" type="password" id="txt_password" maxlength="32" placeHolder="Password" /></td>
+                </tr>
+                <tr>
+                    <td width="15%" nowrap><h4>Program Studi</h4></td>
+                    <td><select class="form-control" name="list_prodi" id="list_prodi">
+                            <option selected style="display:none">Pilih Program Studi</option>
+                            <option value="S1 Pendidikan Teknologi Informasi">S1 PTI</option>
+                            <option value="D3 Managemen Informatika">D3 MI</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td width="15%"><h4>Kelas</h4></td>
+                    <td><select class="form-control" name="list_kelas" id="list_kelas">
+                            <option selected style="display:none">Pilih Kelas</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td width="15%"><h4>Alamat<br></h4>
+                    </td>
+                    <td><textarea class="form-control" name="txt_alamat" cols="32" wrap="virtual" id="txt_alamat" placeHolder="Alamat sekarang"></textarea></td>
+                </tr>
+                <tr>
+                    <td width="15%"><h4>Nomor HP</h4></td>
+                    <td><input class="form-control" name="txt_hp" type="text" id="txt_hp" size="13" maxlength="13" placeHolder="Nomor HP" /></td>
+                </tr>              
+                 <div style="text-align:center;">
+                  <div style="padding:25px 0px">
+                  <input name="chk_accept" type="checkbox" id="chk_accept" value="Accept">Saya yakin bahwa data yang saya masukan adalah benar <br> </div>
+                  <button name="btn_submit" type="submit" class="btn btn-success" id="btn_submit" value="Daftar"><span class="glyphicon glyphicon-floppy-disk"></span> Daftar</button>
+                  <a href="index.html" name="btn_exit" class="btn btn-danger" id="btn_exit"><span class="glyphicon glyphicon-home"></span> Kembali</a>
+                 </div>
+             </form>
+            </div>         
+         <div class="col-md-5 pull-right">
+             <div style="padding-top:80px; text-align:center;">
+<?php
+                $var = rand (1,2);
+                
+                if ($var == 1){
+                    echo '<img class="img-rounded img-thumbnail" src="images/photos/muchlass.jpg">';
+                    echo '<div class="text-msg">"Pendidikan itu modal pokok untuk mengembangkan diri"</div>';
+                }
+                if ($var == 2){
+                    echo '<img class="img-rounded img-thumbnail" src="images/photos/warsono.jpg">';
+                    echo '<div class="text-msg">"Masa Depan Bisa Direncanakan, tetapi kita tidak tahu di titik mana kita akan berhenti. Harus ada optimisme dan langkah-langkah yang harus dilakukan"</div>';
+                }
+?>
+             </div>
+         </div>
+       </div>
+    </div>
+   <div class="col-md-12 footer-second">
+       <p>Copyright Alright Reserved @Project.0</p> 
+   </div>
+</body>
+</html>
